@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>한다시 앱 약관 모음</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500&display=swap">
+<style>
+  :root{--ground:#F5F2EA;--surface:#fff;--ink:#3B342E;--soft:#6E6459;
+        --accent:#CF7B5C;--rule:#E5DDD0;}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --ground:#1C1A17;--surface:#26231F;--ink:#EDE6DA;--soft:#B3A899;
+    --accent:#E39A7C;--rule:#3A342C;}}
+  :root[data-theme="dark"]{--ground:#1C1A17;--surface:#26231F;--ink:#EDE6DA;
+    --soft:#B3A899;--accent:#E39A7C;--rule:#3A342C;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);
+       font-family:"Noto Sans KR",system-ui,sans-serif;line-height:1.8}
+  .wrap{max-width:34rem;margin:0 auto;padding:4rem 1.25rem}
+  h1{font-family:Jua,"Noto Sans KR",sans-serif;font-size:2rem;margin:0 0 .4rem}
+  p.sub{color:var(--soft);margin:0 0 2.5rem;font-size:.9375rem}
+  a.card{display:block;text-decoration:none;color:inherit;background:var(--surface);
+         border:1px solid var(--rule);border-radius:14px;padding:1.1rem 1.25rem;
+         margin-bottom:.75rem}
+  a.card:hover{border-color:var(--accent)}
+  a.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .name{font-weight:500}
+  .what{color:var(--soft);font-size:.875rem}
+  footer{margin-top:2.5rem;color:var(--soft);font-size:.875rem}
+  footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>약관 모음</h1>
+  <p class="sub">한다시가 만드는 앱들의 이용약관과 개인정보처리방침입니다.</p>
+
+  <a class="card" href="./bug/">
+    <div class="name">곤충탐험대</div>
+    <div class="what">이용약관 · 개인정보처리방침</div>
+  </a>
+
+  <footer>문의 <a href="mailto:vitamindkim@gmail.com">vitamindkim@gmail.com</a></footer>
+</div>
+</body>
+</html>

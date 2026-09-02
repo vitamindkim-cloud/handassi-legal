@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>곤충탐험대 약관과 처리방침</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+  /* 앱과 같은 팔레트. 이 문서가 곤충탐험대 것임이 한눈에 보여야 한다. */
+  :root {
+    --ground: #F5F2EA;
+    --surface: #FFFFFF;
+    --raise:  #FBF8F1;
+    --ink:    #3B342E;
+    --soft:   #6E6459;
+    --faint:  #9A9084;
+    --accent: #CF7B5C;
+    --leaf:   #56683F;
+    --leafbg: #EDF1E4;
+    --rule:   #E5DDD0;
+    --shadow: 0 1px 2px rgba(59,52,46,.05), 0 8px 24px rgba(59,52,46,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #1C1A17;
+      --surface: #26231F;
+      --raise:  #2E2A25;
+      --ink:    #EDE6DA;
+      --soft:   #B3A899;
+      --faint:  #8B8073;
+      --accent: #E39A7C;
+      --leaf:   #AFC48D;
+      --leafbg: #2B3122;
+      --rule:   #3A342C;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #1C1A17;
+    --surface: #26231F;
+    --raise:  #2E2A25;
+    --ink:    #EDE6DA;
+    --soft:   #B3A899;
+    --faint:  #8B8073;
+    --accent: #E39A7C;
+    --leaf:   #AFC48D;
+    --leafbg: #2B3122;
+    --rule:   #3A342C;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Noto Sans KR", system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem 5rem; }
+
+  header { padding: 3.5rem 0 1.75rem; }
+  h1 {
+    font-family: Jua, "Noto Sans KR", sans-serif;
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    line-height: 1.25; margin: 0 0 .5rem; text-wrap: balance;
+    letter-spacing: -.01em;
+  }
+  .tagline { color: var(--soft); margin: 0; font-size: 1rem; }
+  .stamp {
+    display: inline-flex; gap: .5rem; align-items: baseline;
+    margin-top: 1.25rem; padding: .4rem .85rem;
+    background: var(--raise); border: 1px solid var(--rule);
+    border-radius: 999px; font-size: .8125rem; color: var(--soft);
+    font-variant-numeric: tabular-nums;
+  }
+  .stamp b { color: var(--ink); font-weight: 500; }
+
+  /* 두 문서가 길어서 오가야 한다. 위에 붙여 둔다. */
+  nav {
+    position: sticky; top: 0; z-index: 5;
+    display: flex; gap: .5rem; padding: .75rem 0;
+    background: color-mix(in srgb, var(--ground) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav a {
+    padding: .45rem .95rem; border-radius: 10px;
+    font-size: .875rem; font-weight: 500; text-decoration: none;
+    color: var(--soft); border: 1px solid transparent;
+  }
+  nav a:hover { color: var(--ink); background: var(--raise); }
+  nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .doc { padding-top: 3rem; scroll-margin-top: 4.5rem; }
+  .doc > h2 {
+    font-family: Jua, "Noto Sans KR", sans-serif;
+    font-size: 1.6rem; margin: 0 0 .75rem; font-weight: 400;
+  }
+  .lead { color: var(--soft); margin: 0 0 .5rem; font-size: .9375rem; }
+
+  .arts { display: flex; flex-direction: column; gap: .75rem; margin-top: 1.75rem; }
+  .art {
+    background: var(--surface); border: 1px solid var(--rule);
+    border-radius: 14px; padding: 1.1rem 1.25rem; box-shadow: var(--shadow);
+  }
+  .art h3 {
+    margin: 0 0 .6rem; font-size: 1rem; font-weight: 700;
+    display: flex; gap: .6rem; align-items: baseline; flex-wrap: wrap;
+  }
+  .num {
+    font-size: .75rem; font-weight: 500; color: var(--accent);
+    font-variant-numeric: tabular-nums; white-space: nowrap;
+  }
+  .li { margin: 0 0 .35rem; font-size: .9375rem; color: var(--soft); }
+  .li:last-child { margin-bottom: 0; }
+  .li.sub { padding-left: 1rem; color: var(--faint); font-size: .875rem; }
+
+  /* 사진·국외이전·안전·아동 조항. 심사에서 제일 먼저 찾는 곳이다. */
+  .art.key {
+    background: var(--leafbg); border-color: color-mix(in srgb, var(--leaf) 35%, transparent);
+  }
+  .art.key .num { color: var(--leaf); }
+  .art.key .li { color: color-mix(in srgb, var(--ink) 82%, var(--leaf)); }
+
+  .art.tail { background: var(--raise); box-shadow: none; }
+  .art.tail h3 { font-size: .9375rem; }
+
+  footer {
+    margin-top: 3.5rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    color: var(--faint); font-size: .875rem;
+  }
+  footer a { color: var(--accent); }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>곤충탐험대</h1>
+    <p class="tagline">우리나라 곤충 311종을 사진으로 찾고, 도감에 모으는 어린이 앱</p>
+    <div class="stamp">시행일 <b>2026년 8월 31일</b></div>
+  </header>
+
+  <nav>
+    <a href="#privacy">개인정보처리방침</a>
+    <a href="#terms">이용약관</a>
+    <a href="#contact">문의</a>
+  </nav>
+
+  <section class="doc" id="privacy">
+    <h2>개인정보처리방침</h2>
+    <p class="lead">시행일: 2026년 8월 31일</p>
+<p class="lead">곤충탐험대(이하 &quot;회사&quot;)는 이용자의 개인정보를 중요시하며, 「개인정보 보호법」 등 관련 법령을 준수합니다. 이 앱은 아동이 사용하는 서비스이므로 필요한 최소한의 정보만 수집합니다.</p>
+    <div class="arts">
+      <section class="art"><h3><span class="num">제1조</span>수집하는 개인정보 항목</h3>
+<p class="li">회사는 다음의 정보를 수집합니다.</p>
+<p class="li">1. 회원가입 시(선택): 이메일 주소, 비밀번호</p>
+<p class="li sub">- 회원가입 없이 비회원으로도 서비스를 이용할 수 있습니다.</p>
+<p class="li">2. 서비스 이용 시:</p>
+<p class="li sub">- 아동의 나이대(이야기 난이도를 정하기 위한 용도)</p>
+<p class="li sub">- 기기 구분값(무작위로 만든 값이며, 이용자를 특정하지 않습니다)</p>
+<p class="li sub">- 서비스 이용 기록, 접속 로그</p>
+<p class="li">3. 이용자가 직접 입력하거나 선택한 정보:</p>
+<p class="li sub">- 사진으로 곤충 찾기에 사용한 사진</p>
+<p class="li sub">- 채집일기에 등록한 사진, 곤충 이름, 장소, 메모</p>
+</section>
+<section class="art"><h3><span class="num">제2조</span>개인정보의 수집 및 이용 목적</h3>
+<p class="li">1. 회원 식별 및 본인 확인(회원가입한 경우)</p>
+<p class="li">2. 곤충 종류 판별 및 서비스 제공</p>
+<p class="li">3. 하루 이용 횟수 제한의 확인</p>
+<p class="li">4. 고객 문의 응대 및 공지사항 전달</p>
+</section>
+<section class="art key"><h3><span class="num">제3조</span>사진의 처리 — 중요</h3>
+<p class="li">1. 사진으로 곤충 찾기 기능을 사용하면, 이용자가 촬영하거나 선택한 사진이 회사의 서버로 전송되고, 곤충 종류 판별을 위해 인공지능 서비스 제공자(Anthropic, PBC)에게 전달됩니다.</p>
+<p class="li">2. 전송된 사진은 판별 목적으로만 사용되며, 판별이 끝나면 즉시 폐기됩니다. 회사는 이용자의 사진을 서버에 저장하지 않습니다.</p>
+<p class="li">3. 채집일기에 등록한 사진은 이용자의 기기 안에만 저장되며 서버로 전송되지 않습니다.</p>
+<p class="li">4. 사진 촬영 및 사진첩 접근 권한은 위 목적에만 사용되며, 이용자가 거부할 수 있습니다. 거부하더라도 도감·검색 등 나머지 기능은 그대로 이용할 수 있습니다.</p>
+</section>
+<section class="art key"><h3><span class="num">제4조</span>개인정보의 국외 이전</h3>
+<p class="li">1. 회사는 곤충 종류 판별을 위해 사진을 아래와 같이 국외로 이전합니다.</p>
+<p class="li sub">- 이전받는 자: Anthropic, PBC (미국)</p>
+<p class="li sub">- 이전 항목: 이용자가 판별을 요청한 사진</p>
+<p class="li sub">- 이전 목적: 곤충 종류 판별</p>
+<p class="li sub">- 보유 기간: 판별 즉시 폐기</p>
+<p class="li">2. 이용자는 국외 이전을 거부할 수 있으며, 이 경우 사진으로 곤충 찾기 기능을 이용할 수 없습니다. 다른 기능은 그대로 이용할 수 있습니다.</p>
+</section>
+<section class="art"><h3><span class="num">제5조</span>개인정보의 보유 및 이용 기간</h3>
+<p class="li">1. 회사는 회원의 개인정보를 회원 탈퇴 시까지 보유하며, 탈퇴 시 지체 없이 파기합니다.</p>
+<p class="li">2. 이용 횟수 확인을 위한 기기 구분값과 이용 기록은 7일간 보관 후 자동으로 삭제됩니다.</p>
+<p class="li">3. 다만 관련 법령에 따라 보존할 필요가 있는 경우 해당 기간 동안 보관합니다.</p>
+</section>
+<section class="art"><h3><span class="num">제6조</span>개인정보의 제3자 제공</h3>
+<p class="li">회사는 제3조 및 제4조에 명시한 인공지능 판별 목적 외에는 이용자의 개인정보를 외부에 제공하지 않습니다. 다만 법령에 의해 요구되는 경우는 예외로 합니다.</p>
+</section>
+<section class="art key"><h3><span class="num">제7조</span>만 14세 미만 아동의 개인정보</h3>
+<p class="li">1. 만 14세 미만 아동이 회원가입을 하려면 법정대리인(보호자)의 동의가 필요합니다.</p>
+<p class="li">2. 법정대리인은 아동의 개인정보에 대한 조회·수정·삭제를 요청할 수 있습니다.</p>
+<p class="li">3. 회사는 아동을 대상으로 맞춤형 광고를 하지 않으며, 광고를 게재하지 않습니다.</p>
+<p class="li">4. 결제가 이루어지는 화면에는 보호자 확인 절차를 두고 있습니다.</p>
+</section>
+<section class="art"><h3><span class="num">제8조</span>개인정보의 파기</h3>
+<p class="li">회사는 개인정보 보유 기간이 경과하거나 처리 목적이 달성된 경우 지체 없이 해당 정보를 파기합니다. 전자적 파일은 복구할 수 없는 방법으로 삭제합니다.</p>
+</section>
+<section class="art"><h3><span class="num">제9조</span>이용자의 권리</h3>
+<p class="li">1. 이용자는 언제든지 자신의 개인정보를 조회, 수정, 삭제, 처리정지를 요청할 수 있습니다.</p>
+<p class="li">2. 이용자는 서비스 내 설정 또는 문의를 통해 위 권리를 행사할 수 있습니다.</p>
+<p class="li">3. 앱을 삭제하면 기기에 저장된 채집일기와 수집 기록은 함께 삭제됩니다.</p>
+</section>
+<section class="art key"><h3><span class="num">제10조</span>개인정보의 안전성 확보 조치</h3>
+<p class="li">회사는 개인정보의 안전한 처리를 위해 통신 구간 암호화, 비밀번호 암호화, 접근 권한 관리 등 기술적·관리적 보호 조치를 취하고 있습니다.</p>
+</section>
+<section class="art"><h3><span class="num">제11조</span>개인정보 보호책임자</h3>
+<p class="li">회사는 개인정보 처리에 관한 업무를 총괄하는 개인정보 보호책임자를 지정하고 있습니다.</p>
+<p class="li">- 연락처: vitamindkim@gmail.com</p>
+</section>
+<section class="art"><h3><span class="num">제12조</span>개인정보처리방침의 변경</h3>
+<p class="li">이 개인정보처리방침은 법령 및 방침에 따라 변경될 수 있으며, 변경 시 서비스 내 공지를 통해 안내합니다.</p>
+</section>
+<section class="art tail"><h3>부칙</h3>
+<p class="li">이 개인정보처리방침은 2026년 8월 31일부터 시행됩니다.</p>
+</section>
+    </div>
+  </section>
+
+  <section class="doc" id="terms">
+    <h2>이용약관</h2>
+    <p class="lead">시행일: 2026년 8월 31일</p>
+    <div class="arts">
+      <section class="art"><h3><span class="num">제1조</span>목적</h3>
+<p class="li">이 약관은 곤충탐험대(이하 &quot;회사&quot;)가 제공하는 모바일 애플리케이션 및 관련 서비스(이하 &quot;서비스&quot;)의 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+</section>
+<section class="art"><h3><span class="num">제2조</span>정의</h3>
+<p class="li">1. &quot;서비스&quot;란 회사가 제공하는 곤충 도감, 사진으로 곤충 찾기, 채집일기, 곤충카드 수집, 대결 이야기 등 일체의 서비스를 말합니다.</p>
+<p class="li">2. &quot;이용자&quot;란 이 약관에 따라 회사가 제공하는 서비스를 이용하는 회원 및 비회원을 말합니다.</p>
+<p class="li">3. &quot;회원&quot;이란 회사에 개인정보를 제공하여 회원등록을 한 자로서, 회사의 서비스를 지속적으로 이용할 수 있는 자를 말합니다.</p>
+</section>
+<section class="art"><h3><span class="num">제3조</span>약관의 효력 및 변경</h3>
+<p class="li">1. 이 약관은 서비스 화면에 게시하거나 기타의 방법으로 이용자에게 공지함으로써 효력이 발생합니다.</p>
+<p class="li">2. 회사는 관련 법령을 위배하지 않는 범위에서 이 약관을 개정할 수 있으며, 약관을 개정할 경우 적용일자 및 개정사유를 명시하여 사전에 공지합니다.</p>
+</section>
+<section class="art"><h3><span class="num">제4조</span>서비스의 제공</h3>
+<p class="li">1. 회사는 다음과 같은 서비스를 제공합니다.</p>
+<p class="li sub">- 우리나라 곤충 도감 및 곤충카드 수집 기능</p>
+<p class="li sub">- 사진으로 곤충을 찾는 기능(인공지능 판별)</p>
+<p class="li sub">- 채집일기 기록 기능</p>
+<p class="li sub">- 곤충 대결 이야기 등 학습·놀이 콘텐츠</p>
+<p class="li sub">- 기타 회사가 정하는 서비스</p>
+<p class="li">2. 회사는 서비스의 내용을 변경할 수 있으며, 변경 시 그 내용을 이용자에게 공지합니다.</p>
+</section>
+<section class="art key"><h3><span class="num">제5조</span>사진으로 곤충 찾기 기능</h3>
+<p class="li">1. 이용자가 촬영하거나 선택한 사진은 곤충 종류를 판별하기 위해 회사의 서버로 전송되며, 판별을 위해 인공지능 서비스 제공자에게 전달됩니다.</p>
+<p class="li">2. 전송된 사진은 판별 목적으로만 사용되며, 판별이 끝나면 즉시 폐기됩니다. 회사는 이용자의 사진을 보관하지 않습니다.</p>
+<p class="li">3. 인공지능 판별 결과는 참고 정보이며 항상 정확하지 않을 수 있습니다. 회사는 판별 결과의 정확성을 보증하지 않습니다.</p>
+<p class="li">4. 이 기능은 서버 운영 비용이 발생하므로 하루 이용 횟수에 제한이 있으며, 제한 횟수는 앱 내에 표시됩니다.</p>
+</section>
+<section class="art key"><h3><span class="num">제6조</span>안전에 관한 안내</h3>
+<p class="li">1. 서비스에는 쏘이거나 물릴 수 있는 곤충에 대한 정보가 포함되어 있으며, 해당 곤충에는 경고 표시가 함께 제공됩니다.</p>
+<p class="li">2. 이용자(보호자)는 아동이 실제 곤충을 관찰할 때 안전에 유의하여야 하며, 회사는 서비스 이용 과정에서 발생한 신체적 사고에 대하여 책임을 지지 않습니다.</p>
+<p class="li">3. 회사는 위험한 곤충에 접근하도록 유도하지 않으며, 사진 촬영만으로 카드를 받을 수 있도록 서비스를 설계하고 있습니다.</p>
+</section>
+<section class="art"><h3><span class="num">제7조</span>서비스의 중단</h3>
+<p class="li">회사는 시스템 점검, 교체, 고장, 통신 두절 등의 사유가 발생한 경우 서비스 제공을 일시적으로 중단할 수 있습니다.</p>
+</section>
+<section class="art"><h3><span class="num">제8조</span>회원가입</h3>
+<p class="li">1. 이용자는 회사가 정한 절차에 따라 회원가입을 신청합니다.</p>
+<p class="li">2. 회사는 이용자의 신청에 대하여 승낙함을 원칙으로 합니다. 다만 타인의 정보를 도용하거나 허위 정보를 기재한 경우 승낙을 거부할 수 있습니다.</p>
+<p class="li">3. 만 14세 미만 아동의 경우 법정대리인(보호자)의 동의가 필요합니다.</p>
+</section>
+<section class="art"><h3><span class="num">제9조</span>회원의 의무</h3>
+<p class="li">1. 이용자는 관계 법령, 이 약관의 규정을 준수하여야 합니다.</p>
+<p class="li">2. 이용자는 타인의 정보를 도용하거나 부정하게 사용해서는 안 됩니다.</p>
+<p class="li">3. 이용자는 서비스의 이용 횟수 제한을 부정한 방법으로 회피해서는 안 됩니다.</p>
+</section>
+<section class="art"><h3><span class="num">제10조</span>회원 탈퇴 및 자격 상실</h3>
+<p class="li">1. 회원은 언제든지 서비스 내 설정을 통해 탈퇴를 요청할 수 있으며, 회사는 즉시 회원 탈퇴를 처리합니다.</p>
+<p class="li">2. 회원이 이 약관을 위반한 경우 회사는 회원 자격을 제한하거나 정지시킬 수 있습니다.</p>
+</section>
+<section class="art"><h3><span class="num">제11조</span>저작권의 귀속</h3>
+<p class="li">1. 서비스 내 콘텐츠에 대한 저작권 및 지적재산권은 회사에 귀속됩니다.</p>
+<p class="li">2. 다만 도감에 사용된 곤충 사진은 각 저작권자의 이용 허락(CC BY, CC BY-SA, 공공누리 등) 조건에 따라 사용되며, 촬영자와 이용 조건은 앱 내에 표시됩니다.</p>
+<p class="li">3. 이용자가 채집일기에 등록한 사진의 권리는 이용자에게 있습니다.</p>
+</section>
+<section class="art"><h3><span class="num">제12조</span>면책조항</h3>
+<p class="li">1. 회사는 천재지변 또는 이에 준하는 불가항력으로 인하여 서비스를 제공할 수 없는 경우 책임이 면제됩니다.</p>
+<p class="li">2. 회사는 이용자의 귀책사유로 인한 서비스 이용 장애에 대하여 책임을 지지 않습니다.</p>
+</section>
+<section class="art"><h3><span class="num">제13조</span>유료 구독 서비스</h3>
+<p class="li">1. 회사는 월 정기 결제 방식의 유료 구독 서비스(이하 &quot;프리미엄&quot;)를 제공할 수 있으며, 프리미엄의 혜택과 이용 횟수는 앱 내에 표시됩니다.</p>
+<p class="li">2. 프리미엄 구독료는 이용자가 가입한 앱스토어(Apple App Store 또는 Google Play) 결제 수단을 통해 매월 자동으로 결제(자동 갱신)됩니다.</p>
+<p class="li">3. 이용자는 결제가 이루어진 앱스토어의 계정 설정에서 언제든지 구독을 해지할 수 있으며, 해지하더라도 이미 결제된 기간이 끝날 때까지는 프리미엄 혜택이 유지됩니다.</p>
+<p class="li">4. 결제 및 환불은 각 앱스토어의 정책을 따르며, 회사가 직접 환불을 처리하지 않습니다.</p>
+<p class="li">5. 구독 가격은 사전 공지 후 변경될 수 있으며, 변경된 가격은 다음 결제 주기부터 적용됩니다.</p>
+</section>
+<section class="art"><h3><span class="num">제14조</span>분쟁 해결</h3>
+<p class="li">이 약관과 관련하여 회사와 이용자 간에 발생한 분쟁은 관련 법령 및 상관례에 따릅니다.</p>
+</section>
+<section class="art tail"><h3>부칙</h3>
+<p class="li">이 약관은 2026년 8월 31일부터 시행됩니다.</p>
+</section>
+<section class="art tail"><h3>문의: vitamindkim@gmail.com</h3>
+</section>
+    </div>
+  </section>
+
+  <footer id="contact">
+    개인정보 보호책임자 · 문의 <a href="mailto:vitamindkim@gmail.com">vitamindkim@gmail.com</a><br>
+    이 문서는 곤충탐험대 앱 안에서도 같은 내용으로 볼 수 있습니다.
+  </footer>
+</div>
+</body>
+</html>
