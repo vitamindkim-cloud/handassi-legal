@@ -12,5 +12,6 @@
 | 폴더 | 원본 | 뽑는 법 |
 |---|---|---|
 | `bug/` | 곤충탐험대 `app/lib/features/auth/presentation/legal_document_page.dart` | `python tools/build_legal.py` 뒤 `legal/index.html`을 복사 |
+| `soomora/` | 숨모라 `soomora` 레포 `store/privacy.html` | 내용이 바뀌면 손으로 옮겨 적는다 (자동화 스크립트 없음. 계정·서버가 없어 조항이 짧다) |
 
 곤충탐험대 저장소의 `test/legal_web_test.dart`가 둘이 어긋나면 실패한다.

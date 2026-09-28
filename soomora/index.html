@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soomora 개인정보처리방침</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Noto+Sans+KR:wght@300;400;500&display=swap">
+<style>
+  /* 숨모라 앱과 같은 팔레트(밤빛 + 금색 하나). 이 문서가 숨모라 것임이 한눈에 보여야 한다. */
+  :root {
+    --ground: #F7F4EC;
+    --surface: #FFFFFF;
+    --raise:  #FBF8F0;
+    --ink:    #2E2A22;
+    --soft:   #6E6455;
+    --faint:  #9A9080;
+    --accent: #B8963A;
+    --rule:   #E7E0D0;
+    --shadow: 0 1px 2px rgba(46,42,34,.05), 0 8px 24px rgba(46,42,34,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #05080B; --surface: #0E1511; --raise: #151A10;
+      --ink: #EDE6D6; --soft: #A8A98F; --faint: #7C7A66;
+      --accent: #E9C77B; --rule: #29301F;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #05080B; --surface: #0E1511; --raise: #151A10;
+    --ink: #EDE6D6; --soft: #A8A98F; --faint: #7C7A66;
+    --accent: #E9C77B; --rule: #29301F;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: "Noto Sans KR", system-ui, -apple-system, sans-serif;
+    font-size: 16px; line-height: 1.85; -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 42rem; margin: 0 auto; padding: 0 1.25rem 5rem; }
+  header { padding: 3.5rem 0 1.5rem; }
+  h1 {
+    font-family: "Cormorant Garamond", "Noto Sans KR", serif;
+    font-weight: 400; letter-spacing: .12em;
+    font-size: clamp(1.9rem, 6vw, 2.5rem); margin: 0 0 .6rem; color: var(--accent);
+  }
+  .tagline { color: var(--soft); margin: 0; font-size: 1rem; }
+  .stamp {
+    display: inline-flex; gap: .5rem; align-items: baseline;
+    margin-top: 1.25rem; padding: .4rem .85rem;
+    background: var(--raise); border: 1px solid var(--rule);
+    border-radius: 999px; font-size: .8125rem; color: var(--soft);
+    font-variant-numeric: tabular-nums;
+  }
+  .stamp b { color: var(--ink); font-weight: 500; }
+
+  nav {
+    position: sticky; top: 0; z-index: 5;
+    display: flex; gap: .5rem; padding: .75rem 0;
+    background: color-mix(in srgb, var(--ground) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav a {
+    padding: .45rem .95rem; border-radius: 10px;
+    font-size: .875rem; font-weight: 500; text-decoration: none;
+    color: var(--soft); border: 1px solid transparent;
+  }
+  nav a:hover { color: var(--ink); background: var(--raise); }
+  nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .doc { padding-top: 3rem; scroll-margin-top: 4.5rem; }
+  .doc > h2 {
+    font-family: "Cormorant Garamond", "Noto Sans KR", serif;
+    font-size: 1.6rem; margin: 0 0 .75rem; font-weight: 400; letter-spacing: .04em;
+  }
+  .lead { color: var(--soft); margin: 0 0 .5rem; font-size: .9375rem; }
+
+  .arts { display: flex; flex-direction: column; gap: .75rem; margin-top: 1.75rem; }
+  .art {
+    background: var(--surface); border: 1px solid var(--rule);
+    border-radius: 14px; padding: 1.1rem 1.25rem; box-shadow: var(--shadow);
+  }
+  .art h3 { margin: 0 0 .5rem; font-size: 1rem; font-weight: 500; color: var(--ink); }
+  .art p { margin: 0; font-size: .9375rem; color: var(--soft); }
+
+  /* 핵심(수집 없음)은 눈에 먼저 띄어야 한다. 심사에서 제일 먼저 찾는 문장이다. */
+  .art.key {
+    background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+    border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+  .art.key h3 { color: var(--accent); }
+
+  footer {
+    margin-top: 3.5rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    color: var(--faint); font-size: .875rem;
+  }
+  footer a { color: var(--accent); }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Soomora</h1>
+    <p class="tagline">개인정보처리방침 · Privacy Policy</p>
+    <div class="stamp">시행일 · Effective <b>2026-09-28</b></div>
+  </header>
+
+  <nav>
+    <a href="#ko">한국어</a>
+    <a href="#en">English</a>
+  </nav>
+
+  <section class="doc" id="ko">
+    <h2>개인정보처리방침</h2>
+    <p class="lead">숨모라(Soomora)는 사용자의 개인정보를 수집하지 않습니다.</p>
+    <div class="arts">
+      <div class="art key">
+        <h3>수집하는 정보</h3>
+        <p>없습니다. 회원가입, 로그인, 광고, 분석 도구가 없습니다.</p>
+      </div>
+      <div class="art">
+        <h3>기기 안에만 저장되는 정보</h3>
+        <p>호흡한 날짜와 시간, 직접 만든 호흡, 언어·소리 등 설정. 이 정보는 사용자의 휴대폰에만 저장되며, 개발자를 포함해 누구에게도 전송되지 않습니다. 앱을 삭제하면 함께 지워집니다.</p>
+      </div>
+      <div class="art">
+        <h3>인터넷 연결</h3>
+        <p>앱은 인터넷 없이 동작하며, 외부 서버와 통신하지 않습니다.</p>
+      </div>
+      <div class="art">
+        <h3>제3자 제공</h3>
+        <p>없습니다.</p>
+      </div>
+      <div class="art">
+        <h3>아동의 개인정보</h3>
+        <p>개인정보를 수집하지 않으므로 아동의 개인정보도 수집하지 않습니다.</p>
+      </div>
+      <div class="art">
+        <h3>방침 변경</h3>
+        <p>이 방침이 바뀌면 이 페이지에 알립니다.</p>
+      </div>
+      <div class="art">
+        <h3>문의</h3>
+        <p><a href="mailto:vitamindkim@gmail.com">vitamindkim@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc" id="en">
+    <h2>Privacy Policy</h2>
+    <p class="lead">Soomora does not collect any personal data.</p>
+    <div class="arts">
+      <div class="art key">
+        <h3>Data we collect</h3>
+        <p>None. There is no account, sign-in, advertising or analytics.</p>
+      </div>
+      <div class="art">
+        <h3>Stored only on your device</h3>
+        <p>The days and minutes you breathed, breaths you create, and your settings (language, sound). This stays on your phone and is never sent to anyone, including us. Deleting the app removes it.</p>
+      </div>
+      <div class="art">
+        <h3>Internet</h3>
+        <p>The app works offline and does not communicate with any server.</p>
+      </div>
+      <div class="art">
+        <h3>Third parties</h3>
+        <p>None.</p>
+      </div>
+      <div class="art">
+        <h3>Children</h3>
+        <p>Since we collect no personal data, we collect none from children.</p>
+      </div>
+      <div class="art">
+        <h3>Changes</h3>
+        <p>Any change to this policy will be posted on this page.</p>
+      </div>
+      <div class="art">
+        <h3>Contact / Support</h3>
+        <p><a href="mailto:vitamindkim@gmail.com">vitamindkim@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>Soomora · <a href="../">약관 모음으로</a> · <a href="mailto:vitamindkim@gmail.com">vitamindkim@gmail.com</a></footer>
+</div>
+</body>
+</html>
