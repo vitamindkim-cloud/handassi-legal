@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>셀즈PT 계정 및 데이터 삭제</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+  /* 곤충탐험대 삭제 안내와 같은 구조. 색만 셀즈PT 브랜드(파랑·보라)로 바꿨다. */
+  :root {
+    --ground:#F4F4F8; --surface:#FFFFFF; --raise:#F9F9FC;
+    --ink:#1F2233; --soft:#5B5F73; --faint:#8A8EA3;
+    --accent:#3B5BDB; --leaf:#5B3FD6; --leafbg:#EEEBFB; --rule:#E2E3EC;
+    --shadow:0 1px 2px rgba(31,34,51,.05), 0 8px 24px rgba(31,34,51,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:#15161D; --surface:#1E2029; --raise:#262833;
+      --ink:#E8E9F1; --soft:#A9ADC2; --faint:#80849A;
+      --accent:#8EA2F5; --leaf:#B5A6F2; --leafbg:#25223A; --rule:#33364A;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:#15161D; --surface:#1E2029; --raise:#262833;
+    --ink:#E8E9F1; --soft:#A9ADC2; --faint:#80849A;
+    --accent:#8EA2F5; --leaf:#B5A6F2; --leafbg:#25223A; --rule:#33364A;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:"Noto Sans KR", system-ui, -apple-system, sans-serif;
+    font-size:16px; line-height:1.75;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap { max-width:680px; margin:0 auto; padding:44px 20px 80px; }
+  header { text-align:center; margin-bottom:34px; }
+  h1 {
+    font-family:Jua, "Noto Sans KR", sans-serif; font-weight:400;
+    font-size:30px; line-height:1.35; margin:0 0 8px; text-wrap:balance;
+  }
+  .who { color:var(--soft); font-size:14px; margin:0; }
+  .card {
+    background:var(--surface); border:1px solid var(--rule);
+    border-radius:16px; padding:24px 24px 20px; margin:0 0 18px;
+    box-shadow:var(--shadow);
+  }
+  .card.key { background:var(--leafbg); border-color:transparent; }
+  h2 {
+    font-family:Jua, "Noto Sans KR", sans-serif; font-weight:400;
+    font-size:20px; margin:0 0 6px; color:var(--leaf);
+  }
+  .card.key h2 { color:var(--leaf); }
+  .lead { color:var(--soft); font-size:15px; margin:0 0 16px; }
+  ol { margin:0; padding-left:0; list-style:none; counter-reset:s; }
+  ol li {
+    counter-increment:s; position:relative;
+    padding:0 0 14px 42px; margin:0;
+  }
+  ol li:last-child { padding-bottom:0; }
+  ol li::before {
+    content:counter(s); position:absolute; left:0; top:2px;
+    width:26px; height:26px; border-radius:50%;
+    background:var(--accent); color:#fff;
+    font-size:14px; font-weight:700; line-height:26px; text-align:center;
+  }
+  table { width:100%; border-collapse:collapse; margin-top:4px; font-size:15px; }
+  th, td { text-align:left; padding:11px 8px; border-bottom:1px solid var(--rule); vertical-align:top; }
+  th { color:var(--faint); font-weight:500; font-size:13px; }
+  td:first-child { width:38%; font-weight:500; }
+  .mail {
+    display:inline-block; margin-top:4px;
+    font-weight:700; color:var(--accent); text-decoration:none;
+    border-bottom:2px solid var(--accent);
+  }
+  .note { font-size:14px; color:var(--soft); margin:14px 0 0; }
+  footer {
+    margin-top:30px; text-align:center;
+    color:var(--faint); font-size:13px; line-height:2;
+  }
+  footer a { color:var(--soft); }
+  @media (max-width:520px) {
+    .wrap { padding:32px 16px 60px; }
+    h1 { font-size:25px; }
+    td:first-child { width:44%; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>계정 및 데이터 삭제</h1>
+    <p class="who">셀즈PT(SalesPT) · 한다씨(handassi)</p>
+  </header>
+
+  <section class="card key">
+    <h2>앱에서 바로 탈퇴하기</h2>
+    <p class="lead">가장 빠릅니다. 누르는 즉시 처리됩니다.</p>
+    <ol>
+      <li>셀즈PT 앱(또는 salespt.kr)에 로그인합니다</li>
+      <li>아래쪽 <b>마이</b> 탭(PC는 <b>마이페이지</b>)을 누릅니다</li>
+      <li>맨 아래 <b>회원 탈퇴</b>를 누릅니다</li>
+      <li>"탈퇴"를 입력하고 <b>탈퇴하기</b>를 누르면 즉시 로그인과 이용이 중단됩니다</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>이메일로 요청하기</h2>
+    <p class="lead">앱을 이미 지우셨거나 로그인이 안 될 때 쓰세요.</p>
+    <p style="margin:0">가입에 쓰신 계정(카카오·구글·Apple)의 이메일 주소로 아래에 보내 주시면,
+      본인 확인 후 <b>영업일 기준 3일 이내</b>에 탈퇴 처리하고 답장드립니다.</p>
+    <a class="mail" href="mailto:vitamind.kim@gmail.com?subject=%EC%85%80%EC%A6%88PT%20%EA%B3%84%EC%A0%95%20%EC%82%AD%EC%A0%9C%20%EC%9A%94%EC%B2%AD">vitamind.kim@gmail.com</a>
+  </section>
+
+  <section class="card">
+    <h2>무엇이 지워지나요</h2>
+    <table>
+      <tr><th>데이터</th><th>어떻게 되나</th></tr>
+      <tr>
+        <td>계정 정보<br>(이름·이메일·로그인 정보)</td>
+        <td>탈퇴하는 즉시 <b>로그인과 이용이 중단</b>됩니다.
+            복구 요청과 분쟁 대응을 위해 <b>1년간 보관한 뒤 완전히 삭제</b>합니다</td>
+      </tr>
+      <tr>
+        <td>고객(회원) 정보<br>상담 기록·AI 분석 결과<br>일정·운동일지·인바디·식단 기록</td>
+        <td><b>탈퇴 후 1년간 보관한 뒤 완전히 삭제</b>합니다</td>
+      </tr>
+      <tr>
+        <td>상담 녹음 파일<br>식단·인바디 사진</td>
+        <td><b>탈퇴 후 1년이 지나면 서버에서 완전히 삭제</b>합니다</td>
+      </tr>
+      <tr>
+        <td>알림용 기기 정보<br>(푸시 토큰)</td>
+        <td>계정이 완전히 삭제될 때 <b>함께 삭제</b>됩니다</td>
+      </tr>
+    </table>
+    <p class="note">관계 법령에 따라 보존이 필요한 기록(예: 소비자 불만·분쟁 처리 기록 3년, 접속 기록 3개월)은
+      해당 기간 동안만 보관합니다. 자세한 내용은
+      <a href="https://salespt.kr/privacy">개인정보처리방침</a>을 확인해 주세요.</p>
+  </section>
+
+  <section class="card">
+    <h2>계정을 지우지 않고 일부만 지우고 싶다면</h2>
+    <p style="margin:0">고객(회원)은 앱의 고객 상세 화면에서 하나씩 삭제할 수 있습니다.
+      삭제한 고객은 실수에 대비해 <b>30일간 휴지통에 보관된 뒤 자동으로 완전히 삭제</b>됩니다.
+      상담 녹음·사진·분석 데이터만 따로 지우고 싶으시면 위 이메일로 요청해 주세요.
+      본인 확인 후 해당 데이터를 삭제하고 답장드립니다.</p>
+  </section>
+
+  <footer>
+    시행일 2026년 10월 5일<br>
+    <a href="https://salespt.kr/privacy">개인정보처리방침</a> · <a href="https://salespt.kr/terms">이용약관</a>
+  </footer>
+
+</div>
+</body>
+</html>
